@@ -6,7 +6,7 @@
   "scripts": {
     "test:junit": "cross-env MOCHA_FILE=junit.xml mocha test --reporter mocha-junit-reporter",
     "test:xunit": "cross-env MOCHA_FILE=xunit.xml mocha test --reporter mocha-xunit-reporter",
-    "test": "npm run test:junit",
+    "test": "mocha",
     "build": "echo \"Dummy build script\""
   },
   "keywords": [],
@@ -19,5 +19,9 @@
     "mocha": "^7.1.2",
     "mocha-junit-reporter": "^1.23.3",
     "mocha-xunit-reporter": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

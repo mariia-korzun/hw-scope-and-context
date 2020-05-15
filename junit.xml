@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0010" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-05-14T11:21:33" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Array" timestamp="2020-05-14T11:21:33" tests="0" file="E:\epam\Autotests\without\Hw10_scope\hw-scope-and-context\test\scope-and-context.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="#indexOf()" timestamp="2020-05-14T11:21:33" tests="1" file="E:\epam\Autotests\without\Hw10_scope\hw-scope-and-context\test\scope-and-context.spec.js" time="0.0010" failures="0">
+    <testcase name="Array #indexOf() should return -1 when the value is not present" time="0.0010" classname="should return -1 when the value is not present">
+    </testcase>
+  </testsuite>
+</testsuites>
