@@ -34,21 +34,16 @@ class Fighter {
     return this.#hp;
   }
   addWin() {
-    return ++this.#win;
+    ++this.#win;
   }
   addLoss() {
-    return ++this.#loss;
+    ++this.#loss;
   }
   heal(points) {
     this.#hp += points;
   }
   dealDamage(points) {
-    if (this.#hp - points >= 0) {
-      this.#hp -= points;
-    } else {
-      this.#hp = 0;
-    }
-    return this.#hp;
+    return (this.#hp - points >= 0) ? this.#hp -= points:this.#hp = 0;
   }
   attack(defender) {
     const isSuccessful = success(defender);
@@ -60,13 +55,16 @@ class Fighter {
       console.log(message);
       defender.dealDamage(this.#damage);
     } else {
-      message = `${defender.#name} attack missed `;
+      message = `${defender.#name} attack missed`;
       console.log(message);
     }
-    return message;
   }
+
+
   logCombatHistory() {
-    console.log(`Name:${this.#name} ,Wins:${this.#win},Losses:${this.#loss}`);
+    console.log(`Name:${this.#name},Wins:${this.#win},Losses:${this.#loss}`);
+    //console.log(`${this.#name}`)
+    //console.log('Hello')
   }
 }
 
@@ -126,4 +124,10 @@ const sayIsDead = (fighter) => {
   return `${fighter.getName()} is dead`;
 };
 
+const fighter1=new Fighter({name: 'Maximus', damage: 25, hp: 105, strength: 30, agility: 40});
+const fighter2 = new Fighter({name: 'Max', damage: 25, hp: 100, strength: 30, agility: 25});
+
+fighter1.addWin()
+fighter1.logCombatHistory()
+fighter1.attack(fighter2)
 module.exports = { Fighter, battle, isDead };
