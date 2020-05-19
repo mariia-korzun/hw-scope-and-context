@@ -77,6 +77,20 @@ HP (if result is higher than fighter’s total HP, than it heals only to total H
 This function takes 2 arguments (instances of ‘Fighter’)  and simulates battle between them. It performs attacks of each fighter on another until one of them is dead (current HP is 0). After that it logs the message with the name of the winner and increases winner’s ‘wins’ property and loser’s ‘losses’ property by one.
 If at the start of battle one of given fighter’s is dead (his HP equal to 0), battle shouldn’t be simulated and warning message about it should be logged in console.
 
+If there are 2 losers the function should return 0(There may be a case when Both of them attack at the same time
+and their health scores then are equal to 0)
+If there is 1 loser the function should return the loser
+If one of the fighters is initially dead , the funtion shoud log '<fighter's name> is dead' and return 0
+
+
+EXAMPLE 1
+
+const fighter1=new Fighter({name: 'Maximus', damage: 25, hp: 105, strength: 30, agility: 40});
+const fighter2 = new Fighter({name: 'David', damage: 15, hp: 0, strength: 10, agility: 10});
+
+battle(fighter1,fighter2) // 'David is dead'
+
+
 
 **Battle Example**  
 
