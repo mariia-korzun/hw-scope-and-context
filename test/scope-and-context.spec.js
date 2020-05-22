@@ -1,4 +1,4 @@
-const {Fighter, battle, isDead} = require('../src/scope-and-context');
+const {Fighter, battle} = require('../src/scope-and-context');
 const sinon = require('mocha-sinon');
 
 describe('Fighter', function() {
@@ -85,4 +85,8 @@ const winnerExists=(fighter1, fighter2)=>{
 
 const isLoser=(fighter1, fighter2)=>{
   return (isDead(fighter1)?fighter1.getName():fighter2.getName());
+};
+
+const isDead = (fighter) => {
+  return fighter.getHealth() === 0;
 };
