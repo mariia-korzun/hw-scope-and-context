@@ -6,7 +6,7 @@
   "scripts": {
     "test:junit": "cross-env MOCHA_FILE=junit.xml mocha test --reporter mocha-junit-reporter",
     "test:xunit": "cross-env MOCHA_FILE=xunit.xml mocha test --reporter mocha-xunit-reporter",
-    "test": "mocha",
+    "test": "npm run test:junit",
     "build": "echo \"Dummy build script\""
   },
   "keywords": [],
