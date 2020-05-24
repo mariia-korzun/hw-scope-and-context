@@ -2,7 +2,13 @@
 
 # IntelliJ project files
 .idea
+<<<<<<< HEAD
 *.xml
 .eslintrc.js
+||||||| merged common ancestors
+*.iml
+=======
+*.xml
+>>>>>>> dd80d85865324e14347ba00df9aced1fb41b25aa
 out
 gen
