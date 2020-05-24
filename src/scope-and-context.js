@@ -1,4 +1,4 @@
-class Fighter {
+function Fighter {
   // add an implementation here
   
 }

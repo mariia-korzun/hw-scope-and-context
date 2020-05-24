@@ -9,6 +9,7 @@ describe('Fighter', function() {
   const fighter1=new Fighter({name: 'Maximus', damage: 25, hp: 105, strength: 30, agility: 40});
   const fighter2 = new Fighter({name: 'Max', damage: 25, hp: 100, strength: 30, agility: 25});
   const fighter3 = new Fighter({name: 'Maxim', damage: 25, hp: 100, strength: 30, agility: 25});
+  const fighter4 = new Fighter({name: 'David', damage: 15, hp: 0, strength: 10, agility: 10});
 
 
   it('should create a fighter object', function() {
@@ -21,7 +22,7 @@ describe('Fighter', function() {
 
   it('Every property should be private', function() {
     Object.keys(fighter1).forEach((key)=>{
-      expect(fighter1[key]).to.equal(undefined);
+      expect(typeof fighter1[key]).to.equal('function');
     });
   });
 
@@ -63,7 +64,7 @@ describe('Fighter', function() {
     fighter1.attack(fighter2);
     if (startHealth===fighter2.getHealth()) {
       expect( console.log.calledOnce ).to.be.true;
-      expect( console.log.calledWith(`Max attack missed`)).to.be.true;
+      expect( console.log.calledWith(`Maximus attack missed`)).to.be.true;
     } else {
       expect( console.log.calledOnce ).to.be.true;
       expect( console.log.calledWith(`Maximus makes 25 damage to Max`)).to.be.true;
@@ -74,6 +75,13 @@ describe('Fighter', function() {
     const loser=battle(fighter2, fighter3);
     expect(loser).to.equal((winnerExists(fighter2, fighter3)?isLoser(fighter2, fighter3):0));
   });
+
+  it('there should be a message about a dead fighter', ()=>{
+    const loser=battle(fighter1, fighter4);
+    expect( console.log.calledOnce ).to.be.true;
+    expect( console.log.calledWith(`David is dead`)).to.be.true;
+    expect(loser).to.equal((winnerExists(fighter1, fighter4)?isLoser(fighter1, fighter4):0));
+  });
 });
 
 const winnerExists=(fighter1, fighter2)=>{
@@ -81,7 +89,7 @@ const winnerExists=(fighter1, fighter2)=>{
 };
 
 const isLoser=(fighter1, fighter2)=>{
-  return (isDead(fighter1)?fighter1.getName():fighter2.getName());
+  return (isDead(fighter1)?fighter1:fighter2);
 };
 
 const isDead = (fighter) => {
