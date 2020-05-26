@@ -46,18 +46,30 @@ console.log(health); // 100
 ```
  
 
-**attack**. This function takes argument (instance of ‘Fighter’), which will be a defender. Then it randomly calculates if current attack is successful (probability of success is inversely proportional to defender’s strength + agility property). For example, if defender’s strength is 30 and agility is 20, success probability of current attack will be 50%. If defender’s strength is 15 and agility is 10, success probability of current attack will be 75% etc. If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and message about successful attack is logged in console. Otherwise, message about missed attack is logged.  
+**attack**. This function takes argument (instance of ‘Fighter’), which will be a defender. 
+Then it randomly calculates if current attack is successful .
+Your program randomly picks a number from 0 to 100 and checks whether the sum of defender's agility and strength(health) is more than the success number
+If it is more than defender misses the attack 
+and a message "<Figter's name> attack missed" should be logged to the console
+
+If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and
+message about successful attack is logged in console. Otherwise, message about missed attack is logged.  
 ```
 myFighter.attack(myFighter2);  
 // Maximus makes 20 damage to Commodus  
 myFighter2.attack(myFighter);  
 // Commodus attack missed 
+
+const fighter1=new Fighter({name: 'John', damage: 25, hp: 105, strength: 30, agility: 40});
+const fighter2 = new Fighter({name: 'Sasha', damage: 45, hp: 100, strength: 30, agility: 25});
+fighter2.attack(fighter1)//Sasha attack missed
+fighter1.attack(fighter2)//John makes 25 damage to Sasha
 ```
  
 
 **logCombatHistory**. This function logs to console information about fighter’s combat
 history.  
-`myFighter.logCombatHistory(); // Name: Maximus, Wins: 0, Losses: 0 ` 
+`myFighter.logCombatHistory(); // Name:Maximus,Wins:0,Losses:0` (Note! NO whitespace) 
 
 **heal**. This function takes amount of health points and add this amount to fighter’s current
 HP (if result is higher than fighter’s total HP, than it heals only to total HP).  
@@ -90,6 +102,112 @@ const fighter2 = new Fighter({name: 'David', damage: 15, hp: 0, strength: 10, ag
 
 battle(fighter1,fighter2) // 'David is dead'
 
+Example 2
+
+
+```
+const fighter1=new Fighter({name: 'John', damage: 25, hp: 105, strength: 30, agility: 40});
+const fighter3 = new Fighter({name: 'Alex', damage: 35, hp: 200, strength: 30, agility: 25});
+```
+
+
+**battle(fighter1,fighter3)
+//In the Console **
+
+
+
+```
+John makes 25 damage to Alex
+Alex makes 35 damage to John
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John attack missed
+Alex makes 35 damage to John
+John makes 25 damage to Alex
+Alex makes 35 damage to John
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex makes 35 damage to John
+John makes 25 damage to Alex
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+0 John
+0 Alex
+```
+
+
+**OR EXAMPLE 3**
+
+
+```
+John attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex makes 35 damage to John
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John attack missed
+Alex makes 35 damage to John
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John attack missed
+Alex attack missed
+John attack missed
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John makes 25 damage to Alex
+Alex attack missed
+John has won!
+0 Alex
+```
 
 
 **Battle Example**  
