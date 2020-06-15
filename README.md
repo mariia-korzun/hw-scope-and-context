@@ -1,11 +1,12 @@
-TASK  
-
-**1) Create a Fighter:**  
-You should create a function or class ‘Fighter’ which takes an object with fighter properties and returns interface with fighter methods:  
+# Scope and context
+## TASK № 1
+### 1) Create a Fighter:**  
+####You should create a function or class ‘Fighter’ which takes an object with fighter properties and returns interface with fighter methods:  
 
 `const myFighter = new Fighter({name: ‘Maximus, damage: 25, hp: 100, strength: 30, agility: 25});` // returns an object with methods  
 
-!!!Note that none of the Fighter’s properties may be available directly. The only way to get or change each property is to use one of Fighter’s methods!!!  
+####!!!Note that none of the Fighter’s properties may be available directly. The only way to get or change each property is to use one of Fighter’s methods!!!  
+### For example:
 ```
 let name = myFighter.name;  
 console.log(name); // undefined  
@@ -14,14 +15,18 @@ console.log(name); // undefined
 
 **Fighter methods:**  
 
-**getName**. This function returns fighter’s name property.  
+**getName**. 
+####This function returns fighter’s name property. 
+### For example:
 ```
 let name = myFighter.getName();  
 console.log(name); // Maximus  
 ```
 
 
-**getDamage**. This function returns fighter’s damage property.  
+**getDamage**. 
+####This function returns fighter’s damage property.  
+### For example:
 ```
 let damage = myFighter.getDamage();  
 console.log(damage); // 20
@@ -32,28 +37,33 @@ console.log(damage); // 20
 	let strength = myFIghter.getStrength();  
 	console.log(strength); // 30  
 
-**getAgility**. This function returns fighter’s agility property.  
+**getAgility**.
+####This function returns fighter’s agility property.  
 ```
 let agility = myFighter.getAgility();  
 console.log(agility); // 25  
 ```
 
 
-**getHealth**. This function returns fighter’s current HP property.  
+**getHealth**. 
+####This function returns fighter’s current HP property.  
 ```
 let health = myFighter.getHealth();  
 console.log(health); // 100 
 ```
  
 
-**attack**. This function takes argument (instance of ‘Fighter’), which will be a defender. 
-Then it randomly calculates if current attack is successful .
-Your program randomly picks a number from 0 to 100 and checks whether the sum of defender's agility and strength(health) is more than the success number
-If it is more than defender misses the attack 
-and a message "<Figter's name> attack missed" should be logged to the console
+**attack**.
+####This function takes argument (instance of ‘Fighter’), which will be a defender. 
+####Then it randomly calculates if current attack is successful .
+####Your program randomly picks a number from 0 to 100 and checks whether the sum of defender's agility and strength(health) is more than the success number
+####If it is more than defender misses the attack 
+####and a message "<Figter's name> attack missed" should be logged to the console
 
-If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and
-message about successful attack is logged in console. Otherwise, message about missed attack is logged.  
+####If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and
+####message about successful attack is logged in console. Otherwise, message about missed attack is logged.  
+
+### For example:
 ```
 myFighter.attack(myFighter2);  
 // Maximus makes 20 damage to Commodus  
@@ -69,17 +79,21 @@ fighter1.attack(fighter2)//John makes 25 damage to Sasha
 
 **logCombatHistory**. This function logs to console information about fighter’s combat
 history.  
+### For example:
 `myFighter.logCombatHistory(); // Name:Maximus,Wins:0,Losses:0` (Note! NO whitespace) 
 
 **heal**. This function takes amount of health points and add this amount to fighter’s current
 HP (if result is higher than fighter’s total HP, than it heals only to total HP).  
+### For example:
 
 `myFighter.heal(50);`
 
 **dealDamage**. This function takes amount of health points and reduces these amount from fighter’s current HP (if it results to a negative number, current HP should equal 0):  
+### For example:
 `myFighter.dealDamage(20);`
 
-**addWin**. This function increases fighter’s wins property by one.  
+**addWin**. This function increases fighter’s wins property by one.
+### For example:
 `myFighter.addWin();`
 
 **addLoss**. This function increases fighter’s losses property by one.  
