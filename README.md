@@ -55,11 +55,12 @@ console.log(health); // 100
 **attack**.
 This function takes argument (instance of ‘Fighter’), which will be a defender. 
 Then it randomly calculates if current attack is successful .
-In your attack method create a variable isSuccessful 
-create a function which returns a random number from 0 to 100 
-`const isSuccessful= random()`
-check whether the sum of defender's agility and strength(health) is more than the success number
-If it is more than defender misses the attack 
+
+- In your attack method create a variable isSuccessful 
+- create a function which returns a random number from 0 to 100 
+- `const isSuccessful= random()`.
+- check whether the sum of defender's agility and strength(health) is more than the success number.
+- If it is more than defender misses the attack 
 and a message "<Figter's name> attack missed" should be logged to the console
 
 If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and
