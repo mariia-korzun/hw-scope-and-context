@@ -55,7 +55,10 @@ console.log(health); // 100
 **attack**.
 This function takes argument (instance of ‘Fighter’), which will be a defender. 
 Then it randomly calculates if current attack is successful .
-Your program randomly picks a number from 0 to 100 and checks whether the sum of defender's agility and strength(health) is more than the success number
+In your attack method create a variable isSuccessful 
+create a function which returns a random number from 0 to 100 
+`const isSuccessful= random()`
+check whether the sum of defender's agility and strength(health) is more than the success number
 If it is more than defender misses the attack 
 and a message "<Figter's name> attack missed" should be logged to the console
 
@@ -81,7 +84,7 @@ history.
 `myFighter.logCombatHistory(); // Name:Maximus,Wins:0,Losses:0` (Note! NO whitespace) 
 
 **heal**. This function takes amount of health points and add this amount to fighter’s current
-HP (if result is higher than fighter’s total HP, than it heals only to total HP).  
+HP 
 ### For example:
 
 `myFighter.heal(50);`
