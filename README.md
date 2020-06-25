@@ -111,14 +111,14 @@ If there is 1 loser the function should return the loser
 If one of the fighters is initially dead , the funtion shoud log '<fighter's name> is dead' and return 0
 
 
-EXAMPLE 1
+**EXAMPLE 1**
 
 const fighter1=new Fighter({name: 'Maximus', damage: 25, hp: 105, strength: 30, agility: 40});
 const fighter2 = new Fighter({name: 'David', damage: 15, hp: 0, strength: 10, agility: 10});
 
 battle(fighter1,fighter2) // 'David is dead'
 
-Example 2
+**Example 2**
 
 
 ```
@@ -226,6 +226,4 @@ John has won!
 ```
 
 
-**Battle Example**  
 
-![alt text](battle_example.png)
