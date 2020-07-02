@@ -74,8 +74,8 @@ myFighter2.attack(myFighter);
 
 const fighter1=new Fighter({name: 'John', damage: 25, hp: 105, strength: 30, agility: 40});
 const fighter2 = new Fighter({name: 'Sasha', damage: 45, hp: 100, strength: 30, agility: 25});
-fighter2.attack(fighter1)//Sasha attack missed
-fighter1.attack(fighter2)//John makes 25 damage to Sasha
+fighter2.attack(fighter1)//'Sasha attack missed' --- This string should be logged. This string means that Sasha missed John's attack and his hp remained the same
+fighter1.attack(fighter2)//'John makes 25 damage to Sasha' --- This string should be logged. This string means that Sasha's hp decreaded by 25
 ```
  
 
@@ -102,13 +102,24 @@ HP
 `myFighter.addLoss();`
 
 **2) Create a ‘battle’ function:**  
-This function takes 2 arguments (instances of ‘Fighter’)  and simulates battle between them. It performs attacks of each fighter on another until one of them is dead (current HP is 0). After that it logs the message with the name of the winner and increases winner’s ‘wins’ property and loser’s ‘losses’ property by one.
-If at the start of battle one of given fighter’s is dead (his HP equal to 0), battle shouldn’t be simulated and warning message about it should be logged in console.
+This function takes 2 arguments (instances of ‘Fighter’)  and simulates battle between them.
+While 1st and 2nd fighters' **hp** is more than 0  performs attacks
+After that it logs the message with the name of the winner and **increases winner’s ‘wins’ property and loser’s ‘losses’ property by one.**
+If at the start of battle one of given fighter’s is dead (his HP is equal to 0):
+- the funtion shoud log '<fighter's name> is dead' and return 0
+- battle shouldn’t be simulated 
 
-If there are 2 losers the function should return 0(There may be a case when Both of them attack at the same time
+If there are 2 losers:
+
+- the function should return 0(There may be a case when Both of them attack at the same time
 and their health scores then are equal to 0)
-If there is 1 loser the function should return the loser
-If one of the fighters is initially dead , the funtion shoud log '<fighter's name> is dead' and return 0
+
+If there is 1 loser :
+- the function should **return the loser **
+- log to the console information about the winner, a string '<fighter's name> has won!' 
+
+
+
 
 
 **EXAMPLE 1**
