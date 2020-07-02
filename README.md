@@ -169,9 +169,10 @@ John makes 25 damage to Alex
 Alex attack missed
 John makes 25 damage to Alex
 Alex attack missed
-0 John
-0 Alex
+
 ```
+In this example by the end of the battle 
+alex's hp = john's hp =0
 
 
 **OR EXAMPLE 3**
@@ -222,7 +223,7 @@ Alex attack missed
 John makes 25 damage to Alex
 Alex attack missed
 John has won!
-0 Alex
+
 ```
 
 
