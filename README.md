@@ -1,6 +1,6 @@
 # Scope and context
 ## TASK № 1
-1) Create a Fighter:**  
+1) Create a Fighter
 You should create a function or class ‘Fighter’ which takes an object with fighter properties and returns interface with fighter methods:  
 
 `const myFighter = new Fighter({name: ‘Maximus, damage: 25, hp: 100, strength: 30, agility: 25});` // returns an object with methods  
@@ -62,9 +62,12 @@ Then it randomly calculates if current attack is successful .
 - check whether the sum of defender's agility and strength(health) is more than the success number.
 - If it is more than defender misses the attack 
 and a message "<Figter's name> attack missed" should be logged to the console
+Note! For example:
+'Sasha attack missed' --- This string should be logged. This string means that Sasha missed John's attack and his hp property remained the same
 
-If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and
-message about successful attack is logged in console. Otherwise, message about missed attack is logged.  
+- If attack is successful, defenders’ current HP property is decreased by number of points equal to attacker’s damage property and
+message about successful attack is logged in console. Otherwise, message about missed attack is logged.. For example :
+'John makes 25 damage to Sasha' --- This string should be logged. This string means that Sasha's hp property decreased by 25
 
 ```
 myFighter.attack(myFighter2);  
@@ -74,8 +77,8 @@ myFighter2.attack(myFighter);
 
 const fighter1=new Fighter({name: 'John', damage: 25, hp: 105, strength: 30, agility: 40});
 const fighter2 = new Fighter({name: 'Sasha', damage: 45, hp: 100, strength: 30, agility: 25});
-fighter2.attack(fighter1)//'Sasha attack missed' --- This string should be logged. This string means that Sasha missed John's attack and his hp remained the same
-fighter1.attack(fighter2)//'John makes 25 damage to Sasha' --- This string should be logged. This string means that Sasha's hp decreaded by 25
+fighter2.attack(fighter1)//'Sasha attack missed'
+fighter1.attack(fighter2)//'John makes 25 damage to Sasha'
 ```
  
 
@@ -102,9 +105,11 @@ HP
 `myFighter.addLoss();`
 
 **2) Create a ‘battle’ function:**  
-This function takes 2 arguments (instances of ‘Fighter’)  and simulates battle between them.
-While 1st and 2nd fighters' **hp** is more than 0  performs attacks
-After that it logs the message with the name of the winner and **increases winner’s ‘wins’ property and loser’s ‘losses’ property by one.**
+1. This function takes 2 arguments (instances of ‘Fighter’)  and simulates battle between them.
+2. While 1st and 2nd fighters' **hp** is more than 0  perform attacks.
+3. After that it logs the message with the name of the winner and **increases winner’s ‘wins’ property and loser’s ‘losses’ property by one.**
+
+
 If at the start of battle one of given fighter’s is dead (his HP is equal to 0):
 - the funtion shoud log '<fighter's name> is dead' and return 0
 - battle shouldn’t be simulated 
