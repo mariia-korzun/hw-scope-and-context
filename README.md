@@ -1,9 +1,11 @@
 # Scope and context
 ## TASK № 1
 1) Create a Fighter
-You should create a function or class ‘Fighter’ which takes an object with fighter properties and returns interface with fighter methods:  
 
-`const myFighter = new Fighter({name: ‘Maximus, damage: 25, hp: 100, strength: 30, agility: 25});` // returns an object with methods  
+
+You should create a function or class ‘Fighter’ which takes an object with fighter properties and returns interface with fighter's methods:  
+
+`const myFighter = new Fighter({name: ‘Maximus, damage: 20, hp: 100, strength: 30, agility: 25});` // returns an object with methods  
 
 !!!Note that none of the Fighter’s properties may be available directly. The only way to get or change each property is to use one of Fighter’s methods!!!  
  For example:
